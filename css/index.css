@@ -1,234 +1,243 @@
-/* CSS Reset */
-*{
+/* === Reset and Defaults === */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-html{
+html {
     scroll-behavior: smooth;
 }
-/* CSS Variables */
-:root{
-    --navbar-height: 59px;
+body {
+    font-family: 'Bree Serif', serif;
+    line-height: 1.6;
+    background-color: #fffefc;
+    color: #333;
 }
 
-/* Navigation Bar */
-#navbar{
+/* === Navbar === */
+#navbar {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     position: sticky;
-    top: 0px;
-}
-
-#navbar::before{
-    content: "";
-    background-color: black;
-    position: absolute;
-    top:0px;
-    left:0px;
-    height: 100%;
-    width:100%;
-    z-index: -1;
-    opacity: 0.7;
-}
-
-/* Navigation Bar: Logo and Image */
-#logo{
-    margin: 1px 24px;
+    top: 0;
+    z-index: 1000;
+    padding: 0.8rem 2rem;
+    background-color: rgba(0, 0, 0, 0.85);
 }
 
 #logo img {
-    height: 46px;
-    margin: 0px 6px;
+    height: 50px;
 }
 
-
-/* Navigation Bar: List Styling */
-
-#navbar ul{
+#navbar ul {
     display: flex;
-    font-family: 'Baloo Bhai', cursive;
-}
-
-#navbar ul li{ 
     list-style: none;
-    font-size: 1.1rem;
 }
 
-#navbar ul li a{
-    color: white;
-    display: block;
-    padding: 3px 22px;
-    border-radius: 20px;
+#navbar ul li {
+    margin-left: 20px;
+}
+
+#navbar ul li a {
     text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: 0.3s;
 }
 
-#navbar ul li a:hover{
-    color: black;
-    background-color: white;
+#navbar ul li a:hover,
+#navbar ul li a.active {
+    background-color: #fff;
+    color: #000;
 }
 
-/* Home Section */
-#home{
+/* === Home Section === */
+#home {
+    background: url('../img/wood worked boards.jpg') no-repeat center center/cover;
+    height: 100vh;
+    color: white;
+    text-align: center;
+    padding: 6rem 2rem 2rem;
     display: flex;
     flex-direction: column;
-    padding:3px 200px;
-    height: 300px;
     justify-content: center;
-    align-items: center;
 }
 
-#home::before{ 
-    content: "";
-    position: absolute;
-    background: url('../img/wood\ worked\ boards.jpg') no-repeat center center/cover;
-    height: 350px;
-    top:0px;
-    left:0px;
-    width: 100%;
-    z-index: -1;
-    opacity:0.89;
-}
-
-#home h1{
-    color:white;
-    text-align: center;
-    font-family: 'Bree Serif', serif;
-}
-
-#home p{
-    color:white;
-    text-align: center;
-    font-size: 1.1rem;
-    font-family: 'Bree Serif', serif;
-}
-/* Services Section */
-#services{
-    margin: 34px;
-    display: flex;
-}
-#services .box {
-    border: 2px solid #efecec;
-    padding: 17px;
-    margin: -26px 21px;
-    border-radius: 30px;
-    background: #f2f2f2;
-    margin-bottom: -10px;
-}
-#services .box img{ 
-   height: 130px;
-   margin: auto;
-   display: block;
-}
-
-#services .box p{
-    font-family: 'Bree Serif', serif;
-    font-size: 0.8rem;
-
-} 
-
-/* Clients Section */
-#client-section{ 
-    position: relative;
-}
-
-#client-section::before{
- content: "";
- position: absolute;
- background: url('../bg.jpg');
- width: 100%;
- height: 100%;
- z-index: -1;
- opacity: 0.3;
-}
-
-#clients{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.client-item{
-    padding: 36px;
-}
-
-#clients img{
-    height: 60px;
-}
-
-
-/* Contact Section */
-#contact{
-    position: relative;
-}
-#contact::before{
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    opacity: 0.7;
-    background: url('../contact.jpg') no-repeat center center/cover;
-
-}
-#contact-box{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 34px;
-}
-#contact-box input, 
-#contact-box textarea{
-    width: 100%;
-    padding: 0.5rem;
-    border-radius: 9px;
-    font-size: 1.1rem;
-} 
-
-#contact-box form{
-    width: 40%;
-}
-
-#contact-box label{
-   font-size: 1.3rem;
-   font-family: 'Bree Serif', serif;
-
-}
-
-
-footer{
-    background: black;
-    color: white;
-    padding: 9px 20px;
-}
-
-/* Utility Classes */
-.h-primary{
-    font-family: 'Bree Serif', serif;
+#home h1 {
     font-size: 3rem;
-    padding: 12px;
+    margin-bottom: 1rem;
 }
 
-.h-secondary{
-    font-family: 'Bree Serif', serif;
-    font-size: 2rem;
-    padding: 12px;
+#home p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 1rem;
 }
 
 .btn {
-    padding: 4px 15px;
-    border: 2px solid white;
-    background-color: black;
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
     color: white;
-    margin: 17px;
-    font-size: 1.1rem;
-    border-radius: 10px;
+    background-color: #e63946;
+    border: none;
+    border-radius: 25px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.btn:hover{
-    background-color: rgb(105, 45, 45);
+.btn:hover {
+    background-color: #c71f2f;
 }
 
-.center{
+/* === Services Section === */
+#services-container {
+    padding: 4rem 2rem;
+    background-color: #f8f8f8;
+}
+
+#services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.box {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
     text-align: center;
+}
+
+.box img {
+    height: 100px;
+    margin-bottom: 1rem;
+}
+
+.box h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.box p {
+    font-size: 0.95rem;
+}
+
+/* === Clients Section === */
+#client-section {
+    padding: 4rem 2rem;
+    background: #fff;
+    text-align: center;
+}
+
+#clients {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.client-item img {
+    height: 60px;
+    filter: grayscale(100%);
+    transition: 0.3s;
+}
+
+.client-item img:hover {
+    filter: grayscale(0);
+}
+
+/* === Contact Section === */
+#contact {
+    background: url('../contact.jpg') no-repeat center center/cover;
+    padding: 4rem 2rem;
+    color: white;
+    position: relative;
+}
+
+#contact-box {
+    background: rgba(0, 0, 0, 0.6);
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 16px;
+}
+
+#contact-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#contact-box label {
+    font-size: 1.1rem;
+}
+
+#contact-box input,
+#contact-box textarea {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    resize: none;
+}
+
+#contact-box input:focus,
+#contact-box textarea:focus {
+    outline: 2px solid #e63946;
+}
+
+/* === Footer === */
+footer {
+    background-color: #000;
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* === Headings Utility === */
+.h-primary {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #e63946;
+    margin-bottom: 1rem;
+}
+
+.h-secondary {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+/* === Responsive Tweaks (if not using phone.css) === */
+@media (max-width: 768px) {
+    #home {
+        height: auto;
+        padding: 3rem 1rem;
+    }
+
+    .h-primary {
+        font-size: 2rem;
+    }
+
+    #navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #navbar ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    #contact-box {
+        width: 100%;
+    }
 }
